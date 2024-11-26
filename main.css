@@ -1,0 +1,241 @@
+body,a,p,h2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'mamelon3.5', sans-serif;
+}
+
+.modal-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ee817b;
+    z-index: 1000; /* 最初はこれを表示 */
+  }
+  @font-face {
+    font-family: 'mamelon3.5'; 
+    src: url('https://coiluck.github.io/fonts/Mamelon-3.5HiRegular.woff2') format('woff2'), 
+    font-weight: normal;
+    font-style: normal;
+  }
+  .title-image {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 75%;
+    margin: 0 auto;
+  }
+  .title-image img {
+    width: 70%;
+    height: auto;
+    object-fit: contain
+  }
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 25%;
+    margin-top: 10%;
+  }
+  #title-start {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-color: #ee817b;
+    color: #fff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-size: 16px;
+    font-family: 'mamelon3.5', sans-serif;
+    letter-spacing: .1em;
+    cursor: pointer;
+  }
+  #loading-text span {
+    display: inline-block;
+  }
+  /* バウンドするアニメーション */
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    65% {
+      transform: translateY(-5px);
+    }
+    80% {
+      transform: translateY(0);
+    }
+    90% {
+      transform: translateY(-2px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+.warning {
+  width: 70%;
+  margin: auto;
+  position: relative;
+  font-size: .8em;
+}
+@media (min-width: 480px) {
+  .warning {
+    display: none;
+  }
+}
+
+/* ここからオープニング */
+.modal-opening {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 800;
+  overflow: hidden;
+}
+#opening-background {
+  width: 100%;
+  height: 100%;
+}
+#opening-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#opening-character {
+  position: fixed;
+  bottom: 0;
+  left: 30%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 50%;
+  display: none;
+}
+#opening-character img {
+  width: auto;
+  height: 100%;
+}
+
+#opening-text {
+  position: absolute;
+  width: 100%;
+  top: 85%;
+  height: 15%;
+  background-color: #000;
+  opacity: 0.6;
+  border: none;
+  border-top: 1px solid #f6d893;
+}
+#opening-text p {
+  margin: 10px 20px;
+  color: #eee; /* この色いいね */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* フェードアウト用。このクラスをjsファイルでつけてあげる + display: none;の適用 */
+.fadeout {
+  animation: fadeOut 1s;
+  animation-fill-mode: both; /* アニメーション再生後は、最後のキーフレーム（100%）のスタイルが適用されます、らしい */
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fadein2 { /* まじで名前がミスの元過ぎる */
+  animation: fadeIn2 1s;
+  animation-fill-mode: both;
+}
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 議員のとこ */
+.modal-opening2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 600;
+  overflow: hidden;
+}
+#opening-background2 {
+  width: 100%;
+  height: 100%;
+}
+#opening-background2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#opening-character2 {
+  position: fixed;
+  bottom: 0;
+  left: 30%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 50%;
+  display: none;
+}
+#opening-character2 img {
+  width: auto;
+  height: 100%;
+}
+#opening-character2-giin {
+  position: fixed;
+  bottom: 0;
+  right: 30%;
+  transform: translateX(50%);
+  width: auto;
+  height: 50%;
+  display: none;
+}
+#opening-character2-giin img {
+  width: auto;
+  height: 100%;
+}
+#opening-text2 {
+  position: absolute;
+  width: 100%;
+  top: 85%;
+  height: 15%;
+  background-color: #000;
+  opacity: 0.6;
+  border: none;
+  border-top: 1px solid #f6d893;
+}
+#opening-text2 p {
+  margin: 10px 20px;
+  color: #eee; /* この色いいね */
+  -webkit-user-select: none;
+  user-select: none;
+}

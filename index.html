@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アーニャのお仕事体験</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="end.css">
+  <link rel="icon" href="picture/favicon.ico">
+</head>
+<body>
+
+<!--pictureタグ入れるとCSS壊れる。面倒だから放置-->
+
+  <div class="modal-title" id="modal-title">
+    <div class="title-image">
+      <source srcset="picture/title.avif" type="image/avif">
+      <img src="picture/title.png">
+    </div>
+    <div class="warning">
+      注 このテキストはスマホでのみ見えている気がします<br>画面の自動回転をONにして横向きでプレイすることをおすすめします
+    </div>
+    <div class="title-container">
+      <span id="loading-text">- Now Loading -</span>
+      <button onclick="byeTitle()" id="title-start">Start</button>
+    </div>
+  </div>
+
+  <div class="modal-opening" id="modal-opening">  <!--部屋のとこ-->
+    <div id="opening-background">
+      <source srcset="picture/room.avif" type="image/avif">
+      <img src="picture/room.png">
+    </div>
+    <div id="opening-character">
+      <picture>
+        <source srcset="picture/azana.avif" type="image/avif">
+        <img src="picture/azana.png">
+      </picture>
+    </div>
+    <div id="opening-text">
+      <p>う～、むにゃむにゃ</p>
+    </div>
+  </div>
+
+  <div class="modal-opening2" id="modal-opening2"> <!--議員のとこ-->
+    <div id="opening-background2">
+      <picture>
+        <source srcset="picture/parliament.avif" type="image/avif">
+        <img src="picture/parliament.png">
+      </picture>
+    </div>
+    <div id="opening-character2">
+      <picture>
+        <source srcset="picture/azana2.avif" type="image/avif">
+        <img src="picture/azana2.png">
+      </picture>
+    </div>
+    <div id="opening-character2-giin">
+      <picture>
+        <source srcset="picture/giin.avif" type="image/avif">
+        <img src="picture/giin.png">
+      </picture>
+    </div>
+    <div id="opening-text2">
+      <p>スペイン共和国議会</p>
+    </div>
+  </div>
+
+  <div class="modal-game" id="modal-game">  <!--ゲームのとこ-->
+    <div id="game-background">
+      <picture>
+        <source srcset="picture/game-background.avif" type="image/avif">
+        <img src="picture/game-background.png">
+      </picture>
+    </div>
+    <div id="current-index">1/3</div>
+    <div id="support">
+      <div id="left"></div>
+      <div id="central"></div>
+      <div id="right"></div>
+    </div>
+    <div id="left-style-bar" class="style-bar"></div>
+    <div id="central-style-bar" class="style-bar"></div>
+    <div id="right-style-bar" class="style-bar"></div>
+    <div class="selection-container">
+      <div id="selestion1" class="choose">
+        <div id="sele1-title">box1</div>
+        <div id="sele1-nakami">左派+10%<br>共和+5%<br>右派-10%</div>
+      </div>
+      <div id="selestion2" class="choose">
+        <div id="sele2-title">box2</div>
+        <div id="sele2-nakami">左派+10%<br>共和+5%<br>右派-10%</div>
+      </div>
+      <div id="selestion3" class="choose">
+        <div id="sele3-title">box3</div>
+        <div id="sele3-nakami">左派+10%<br>共和+5%<br>右派-10%</div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!--ending分岐-->
+  <div id="end-radicalRevolution" class="modal-ending">
+    <picture>
+      <!--  <source srcset="picture/game-background.avif" type="image/avif">  -->
+      <img src="picture/end-background.png">
+    </picture>
+    <div class="end-info">
+      <div class="end-title">
+      急進的革命
+      </div>
+      <ul class="end-conditions">
+        <li>左派の支持率が共和派と右派の合計よりも高い</li>
+      </ul>
+      <button class="close-end-info">災厄は免れた</button>
+    </div>
+    <div class="ending-text" id="end-radicalRevolution-text">
+      <p>マヌエル・アサーニャ</p>
+    </div>
+  </div>
+
+  <div id="end-restartRepublic" class="modal-ending">
+    <picture>
+      <!--  <source srcset="picture/game-background.avif" type="image/avif">  -->
+      <img src="picture/end-background.png">
+    </picture>
+    <div class="end-info">
+      <div class="end-title">
+      共和制の再建
+      </div>
+      <ul class="end-conditions">
+        <li>共和派の支持率が最も高い</li>
+        <li>左派と右派の支持率の差が10%以内で拮抗している</li>
+      </ul>
+      <button class="close-end-info">一から……いいえ、ゼロから！</button>
+    </div>
+    <div class="ending-text" id="end-restartRepublic-text">
+      <p>マヌエル・アサーニャ</p>
+    </div>
+  </div>
+
+  <div id="end-fascismCrisis" class="modal-ending">
+    <picture>
+      <!--  <source srcset="picture/game-background.avif" type="image/avif">  -->
+      <img src="picture/end-background.png">
+    </picture>
+    <div class="end-info">
+      <div class="end-title">
+      ファシズム危機
+      </div>
+      <ul class="end-conditions">
+        <li>右派の支持率が左派と共和派の合計よりも高い</li>
+      </ul>
+      <button class="close-end-info">ああ</button>
+    </div>
+    <div class="ending-text" id="end-fascismCrisis-text">
+      <p>マヌエル・アサーニャ</p>
+    </div>
+  </div>
+
+  <div id="end-defection" class="modal-ending">
+    <picture>
+      <!--  <source srcset="picture/game-background.avif" type="image/avif">  -->
+      <img src="picture/end-background.png">
+    </picture>
+    <div class="end-info">
+      <div class="end-title">
+      亡命
+      </div>
+      <ul class="end-conditions">
+        <li>すべての派閥の支持率が25%以下</li>
+      </ul>
+      <button class="close-end-info">誰も私を愛さない</button>
+    </div>
+    <div class="ending-text" id="end-defection-text">
+      <p>マヌエル・アサーニャ</p>
+    </div>
+  </div>
+
+  <div id="end-civilWar" class="modal-ending">
+    <picture>
+      <!--  <source srcset="picture/game-background.avif" type="image/avif">  -->
+      <img src="picture/end-background.png">
+    </picture>
+    <div class="end-info">
+      <div class="end-title">
+      内戦勃発
+      </div>
+      <ul class="end-conditions">
+        <li>他の4つのルートの条件を満たしていない</li>
+      </ul>
+      <button class="close-end-info">なんて日だ！</button>
+    </div>
+    <div class="ending-text" id="end-civilWar-text">
+      <p>マヌエル・アサーニャ</p>
+    </div>
+  </div>
+
+  <button class="restart" id="restart">Restart</button>
+
+  <script src="main.js"></script>
+  <script src="game.js"></script>
+  <script src="end.js"></script>
+</body>
+</html>
