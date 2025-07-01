@@ -7,9 +7,9 @@ let factionsSupport = {
 
 // 支持率を表示する
 function updateSupportBars() {
-  document.getElementById("left-style-bar").style.width = factionsSupport.left * 0.24 + "%";
-  document.getElementById("central-style-bar").style.width = factionsSupport.central * 0.24 + "%";
-  document.getElementById("right-style-bar").style.width = factionsSupport.right * 0.24 + "%";
+  document.getElementById("left-style-bar").style.width = `${factionsSupport.left}%`;
+  document.getElementById("central-style-bar").style.width = `${factionsSupport.central}%`;
+  document.getElementById("right-style-bar").style.width = `${factionsSupport.right}%`;
   document.getElementById("left").innerText = "左派: " + factionsSupport.left + "%";
   document.getElementById("central").innerText = "共和: " + factionsSupport.central + "%";
   document.getElementById("right").innerText = "右派: " + factionsSupport.right + "%";

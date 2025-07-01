@@ -5,92 +5,81 @@ body,a,p,h2 {
 }
 
 .modal-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ee817b;
-    z-index: 1000; /* 最初はこれを表示 */
-  }
-  @font-face {
-    font-family: 'mamelon3.5'; 
-    src: url('./Mamelon-3.5HiRegular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-  .title-image {
-    display: flex;
-    justify-content: center;
-    width: auto;
-    height: 75%;
-    margin: 0 auto;
-  }
-  .title-image img {
-    width: 70%;
-    height: auto;
-    object-fit: contain
-  }
-  .title-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 25%;
-    margin-top: 10%;
-  }
-  #title-start {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    background-color: #ee817b;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #fff;
-    font-size: 16px;
-    font-family: 'mamelon3.5', sans-serif;
-    letter-spacing: .1em;
-    cursor: pointer;
-  }
-  #loading-text span {
-    display: inline-block;
-  }
-  /* バウンドするアニメーション */
-  @keyframes bounce {
-    0% {
-      transform: translateY(0);
-    }
-    25% {
-      transform: translateY(-10px);
-    }
-    50% {
-      transform: translateY(0);
-    }
-    65% {
-      transform: translateY(-5px);
-    }
-    80% {
-      transform: translateY(0);
-    }
-    90% {
-      transform: translateY(-2px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-.warning {
-  width: 70%;
-  margin: auto;
-  position: relative;
-  font-size: .8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ee817b;
+  z-index: 1000; /* 最初はこれを表示 */
 }
-@media (min-width: 480px) {
-  .warning {
-    display: none;
+@font-face {
+  font-family: 'mamelon3.5'; 
+  src: url('./Mamelon-3.5HiRegular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+.title-image {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 75%;
+  margin: 0 auto;
+}
+.title-image img {
+  width: 70%;
+  height: auto;
+  object-fit: contain
+}
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 25%;
+  margin-top: 10%;
+}
+#title-start {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-color: #ee817b;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #fff;
+  font-size: 1.2rem;
+  font-family: 'mamelon3.5', sans-serif;
+  letter-spacing: .1em;
+  cursor: pointer;
+}
+#loading-text span {
+  display: inline-block;
+}
+/* バウンドするアニメーション */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  65% {
+    transform: translateY(-5px);
+  }
+  80% {
+    transform: translateY(0);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
